@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>
+        {% block title %}
+            
+                
+                Cheremyxa
+                
+            
+        {% endblock %}
+    </title>
+    {% block style %}
+        <link rel="stylesheet" href="{% static '/css/main.css' %}">
+        <link rel="stylesheet" href="{% static '/css/krasnoznam.css' %}">
+        <link rel= 'stylesheet' href = "{% static '/css/cherema.css'  %}">
+        <link rel= 'stylesheet' href = "{% static '/css/bulvar.css'  %}">
+    {% endblock %}
+</head>
+
+           
+<body>
+        
+        <div class = 'background'>
+            {% block body %}
+            <div class="container_ad">
+
+                    <a href="admin/"><button class="ad-1">Администрирование</button></a>
+
+
+            </div>
+                <div class="text">
+                    
+                    <a href="{% url 'krasn'%}"><h5><div style="text-align:center" class= "t1">Краснознаменская<br><div style="font-size:20px">ул. Краснознаменская, 69</div></h5></a>
+                    <a href="{% url 'bul'%}"><h5><div class= "t2" style="text-align:center">Бульвар<br><div style="font-size:20px">ул. Октябрьская, 41</div></div></h5></a>
+                    <a href="{% url 'cher' %}"> <h5><div class= "t3" style="text-align:center">Черёмушки<br><div style="font-size:20px">ул. Металлургов, 18</div></div></h5></a>
+        
+                </div>
+                <div class="contact">
+                    <h3>Наши контакты:<br>+380 (7140) 0-15-66<br>adress@gmail.com</h3>
+                </div>
+        
+            
+            {% endblock %}
+        </div>
+             
+            
+</body>
+
+            
+</html>

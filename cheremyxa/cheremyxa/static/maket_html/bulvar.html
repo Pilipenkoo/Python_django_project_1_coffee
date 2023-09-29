@@ -1,0 +1,35 @@
+{% extends 'maket_html/main.html' %}
+{% load static %}
+
+{% block title %}
+
+
+    Che Бульвар
+
+
+{% endblock %}
+
+{% block body %}
+    <div class = 'search_1'>
+        <a href = "{% url 'main' %}"><h1>Бульвар</h1></a>
+        <form class = 'search' method="get" action="{% url 'bul' %}">
+            <input type="text" name="query" placeholder="Поиск">
+            <button type="submit">Поиск</button>
+        </form>
+    </div>
+
+                
+    {% for product in products_b %}
+        <div class = 'text-1'>
+            
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.composition }}</p>
+            <p>Цена: {{ product.price }} | Вес,г: {{ product.weight }}</p>
+            <img class = 'num' src="{{ product.image.url }}" width="300" height="200">
+        </div>
+    {% empty %}
+        <p>Продукты ещё не добавлены</p>
+    {% endfor %}
+{% endblock %}
+
+
